@@ -1,0 +1,9 @@
+sources:
+  - name: Fission
+    handler:
+      openapi:
+        baseUrl: "http://localhost:8001/api/v1/namespaces/fission/services/controller:80/proxy/"
+        source: "fission-spec.yaml"
+        operationIdFieldNames: true
+documents:
+  - "./graphql/**/*.graphql"

@@ -1,0 +1,19 @@
+query getPackages {
+  getPackages {
+    metadata {
+      name
+    }
+  }
+}
+
+query getPackage($package: String!) {
+  getPackage(package: $package) {
+    metadata {
+      name
+    }
+  }
+}
+
+mutation deletePackage($package: String!) {
+  deletePackage(package: $package)
+}

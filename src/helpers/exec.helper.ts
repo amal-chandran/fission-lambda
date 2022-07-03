@@ -1,4 +1,5 @@
-import shell from 'shelljs';
+import { spawn } from "child_process";
+import shell from "shelljs";
 
 export class CommandException extends Error {
   commandSTDException: string;
@@ -26,4 +27,20 @@ export const execCmd = (
   }
 
   return commandOut;
+};
+export const execCmdDetached = (commandString: string) => {
+  const spaceSplitCommand = commandString.split(" ");
+  const command = spaceSplitCommand.shift() as string;
+
+  const childProcess = spawn(command, spaceSplitCommand, {
+    detached: true,
+  });
+
+  const kill = () => {
+    if (childProcess.pid) {
+      process.kill(-childProcess.pid);
+    }
+  };
+
+  return { kill, childProcess };
 };

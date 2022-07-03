@@ -1,0 +1,17 @@
+query getFunctions {
+  getFunctions {
+    metadata {
+      name
+    }
+  }
+}
+query getFunction($function: String!) {
+  getFunction(function: $function) {
+    metadata {
+      name
+    }
+  }
+}
+mutation deleteFunction($function: String!) {
+  deleteFunction(function: $function)
+}
