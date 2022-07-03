@@ -1,0 +1,49 @@
+{
+  "version": "0.0.1",
+  "name": "nx-fission",
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc",
+    "prebuild": "npm run clean",
+    "clean": "rimraf dist",
+    "prepublish": "npm run build"
+  },
+  "bin": {
+    "nx-fission": "bin/run.js"
+  },
+  "dependencies": {
+    "commander": "^8.3.0",
+    "fast-glob": "^3.2.7",
+    "fs-extra": "^10.1.0",
+    "hasha": "^5.2.2",
+    "joi": "^17.5.0",
+    "js-yaml": "^4.1.0",
+    "lodash": "^4.17.21",
+    "semver": "^7.3.5",
+    "shelljs": "^0.8.4",
+    "graphql": "^16.5.0"
+  },
+  "devDependencies": {
+    "@types/commander": "^2.12.2",
+    "@types/fs-extra": "^9.0.13",
+    "@types/joi": "^17.2.3",
+    "@types/js-yaml": "^4.0.5",
+    "@types/lodash": "^4.14.178",
+    "@types/semver": "^7.3.9",
+    "@types/shelljs": "^0.8.9",
+    "@types/typescript": "^2.0.0",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.4.0",
+    "@graphql-mesh/cli": "^0.74.0",
+    "@graphql-mesh/openapi": "^0.28.0",
+    "@graphql-mesh/runtime": "^0.40.0",
+    "typescript": "^4.5.3"
+  },
+  "author": {
+    "name": "Amal Chandran",
+    "email": "amalchandrandev@gmail.com",
+    "url": "https://amalchandran.me"
+  },
+  "license": "MIT",
+  "description": "A fission serverless helper cli for nx workspaces"
+}
